@@ -103,6 +103,7 @@
     <Compile Include="App_Start\SwaggerConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\WorkersController.cs" />
+    <Compile Include="CustomInit.cs" />
     <Compile Include="Factory.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

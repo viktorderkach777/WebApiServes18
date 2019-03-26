@@ -22,6 +22,7 @@ namespace WebApiWorkers
         public Factory()
             : base("name=Factory")
         {
+            Database.SetInitializer<Factory>(new CustomInit<Factory>());
         }
         
         /// <summary>

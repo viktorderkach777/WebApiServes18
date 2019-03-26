@@ -12,17 +12,29 @@ using WebApiWorkers;
 
 namespace WebApiWorkers.Controllers
 {
+    /// <summary>
+    /// API controller for Worker CRUD
+    /// </summary>
     public class WorkersController : ApiController
     {
         private Factory db = new Factory();
 
         // GET: api/Workers
+        /// <summary>
+        /// Read all workers information
+        /// </summary>
+        /// <returns>Collection of Workers</returns>
         public IQueryable<Worker> GetWorkers()
         {
             return db.Workers;
         }
 
         // GET: api/Workers/5
+        /// <summary>
+        /// Read Workers information by Id
+        /// </summary>
+        /// <param name="id">Worker's database Id</param>
+        /// <returns>Worker or Null</returns>
         [ResponseType(typeof(Worker))]
         public IHttpActionResult GetWorker(int id)
         {
@@ -36,6 +48,12 @@ namespace WebApiWorkers.Controllers
         }
 
         // PUT: api/Workers/5
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="worker"></param>
+        /// <returns></returns>
         [ResponseType(typeof(void))]
         public IHttpActionResult PutWorker(int id, Worker worker)
         {
@@ -71,6 +89,11 @@ namespace WebApiWorkers.Controllers
         }
 
         // POST: api/Workers
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="worker"></param>
+        /// <returns></returns>
         [ResponseType(typeof(Worker))]
         public IHttpActionResult PostWorker(Worker worker)
         {
@@ -86,6 +109,11 @@ namespace WebApiWorkers.Controllers
         }
 
         // DELETE: api/Workers/5
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [ResponseType(typeof(Worker))]
         public IHttpActionResult DeleteWorker(int id)
         {
@@ -101,6 +129,10 @@ namespace WebApiWorkers.Controllers
             return Ok(worker);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="disposing"></param>
         protected override void Dispose(bool disposing)
         {
             if (disposing)
